@@ -1,0 +1,2 @@
+rootProject.name='Schwangerschaftsrechner Entwurf'
+include ':app'
