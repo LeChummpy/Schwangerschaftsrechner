@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -30,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         Values.PatientDB = new DatabseHandler(this);
 
         mListView = (ListView)findViewById(R.id.ListView);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent create_new_Patient_activity = new Intent(getApplicationContext(), DisplayUniqueData.class);
+                create_new_Patient_activity.putExtra("ListViewID", id);
+                startActivity(create_new_Patient_activity);
+            }
+        });
         mAddPatient = (Button)findViewById(R.id.addPatient);
         mAddPatient.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -111,7 +111,7 @@ public class create_new_Patient_activity extends AppCompatActivity implements Da
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Year = year;
-        Month = month;
+        Month = month + 1;
         Day = dayOfMonth;
         Enter_Dola.setText(Day + "/"  + Month + "/" + Year);
     }
